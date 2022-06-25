@@ -1,0 +1,158 @@
+---
+layout: default
+pagination:
+  enabled: true
+---
+<div class="header-instagra" >
+  <div class="container-fluid p-0">
+    <div class="row no-gutters" id="instafeed">
+    </div>
+  </div>
+</div>
+
+<header class="header-top bg-dark justify-content-between navigation-dark">
+  <nav class="navbar navbar-expand-lg navigation ">
+      <div class="container">
+          <a class="navbar-brand d-lg-none" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ti-menu"></span>
+          </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                  {% include navigation.html menu_class="mr-auto"%}
+                  <ul class="list-inline mb-0 d-block d-lg-none dark-header-socials">
+                    {% include social_profiles.html %}
+                  </ul>
+              </div>
+
+              <ul class="header-socials-2 text-right d-none d-lg-block mb-0">
+                {% include social_profiles.html %}
+              </ul>
+        </div>
+      </nav>
+  </header>
+
+
+<div class="header-logo py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <a class="navbar-brand d-none d-lg-block" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section-padding pt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+				{% if paginator.page == 1 %}
+				{% for post in site.posts %}
+				  {% if forloop.index == 1 %}
+				  <article class="post-grid mb-5">
+				  	{% if post.post_image %}
+					<a class="post-thumb mb-4 d-block" href="{{post.url}}">
+						<img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+					</a>
+					{% endif %}
+					<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1" }}</span>
+					<h2 class="mb-1 mt-2 post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+					<div class="post-content mt-4">
+						<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
+					</div>
+				  </article>
+				 {% endif %}
+                {% endfor %}
+
+				<div class="row">
+                    {% for post in site.posts limit: "5" %}
+                    {% if forloop.index != 1 %}
+					<div class="col-lg-6">
+						<article class="post-grid mb-5">
+							{% if post.post_image %}
+							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
+								<img src="{{post.post_image}}" alt="" class="img-fluid"/>
+							</a>
+							{% endif %}
+							<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1"}}</span>
+							<h3 class="post-title mb-1 mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+
+							<div class="post-content mt-4">
+								<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
+							</div>
+						</article>
+					</div>
+					{% endif %}
+                    {% endfor %}
+				</div>
+				{% for post in site.posts %}
+				  {% if forloop.index == 6 %}
+				  <article class="post-grid mb-5">
+				  	{% if post.post_image %}
+					<a class="post-thumb mb-4 d-block" href="{{post.url}}">
+						<img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+					</a>
+					{% endif %}
+					<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1" }}</span>
+					<h2 class="mb-1 mt-2 post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+					<div class="post-content mt-4">
+						<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
+					</div>
+				  </article>
+				 {% endif %}
+                {% endfor %}
+				<div class="row">
+                    {% for post in paginator.posts %}
+                    {% if forloop.index > 6 %}
+					<div class="col-lg-6">
+						<article class="post-grid mb-5">
+							{% if post.post_image %}
+							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
+								<img src="{{post.post_image}}" alt="" class="img-fluid"/>
+							</a>
+							{% endif %}
+							<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1"}}</span>
+							<h3 class="post-title mb-1 mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+
+							<div class="post-content mt-4">
+								<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
+							</div>
+						</article>
+					</div>
+					{% endif %}
+                    {% endfor %}
+				</div>
+				{% else %}
+				<div class="row">
+                    {% for post in paginator.posts %}
+					<div class="col-lg-6">
+						<article class="post-grid mb-5">
+							{% if post.post_image %}
+							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
+								<img src="{{post.post_image}}" alt="" class="img-fluid"/>
+							</a>
+							{% endif %}
+							<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1"}}</span>
+							<h3 class="post-title mb-1 mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+
+							<div class="post-content mt-4">
+								<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
+							</div>
+						</article>
+					</div>
+                    {% endfor %}
+				</div>
+                {% endif %}
+                <div class="m-auto">
+                {% include pagination.html %}
+            </div>
+
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              {% include sidebar.html %}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include footer_one.html %}

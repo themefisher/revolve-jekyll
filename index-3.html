@@ -1,0 +1,245 @@
+---
+layout: default
+pagination:
+  enabled: true
+---
+<link rel="stylesheet" href="{{relative_url}}/assets/plugins/fancybox/jquery.fancybox.min.css"/>
+<header class="header-top bg-grey justify-content-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-2 header-left col-md-4 col-7">
+        <ul class="list-inline header-socials-2 mb-0 text-center">
+          {% include social_profiles.html %}
+          <li class="list-inline-item"><div class="search_toggle mobile-search d-md-block d-lg-none"><i class="ti-search"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-8 text-center col-md-8 col-5">
+        <nav class="navbar navbar-expand-lg navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="ti-menu"></span>
+          </button>
+              <div class="collapse navbar-collapse" id="navbarContent">
+                 {% include navigation.html menu_class="mx-auto" %}
+              </div>
+          </nav>
+        </div>
+        
+      <div class="col-lg-2">
+        <div class="text-right search"> <div class="search_toggle d-none d-lg-block"><i class="ti-search"></i></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="header-logo py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <a class="navbar-brand" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--search overlay start-->
+<div class="search-wrap">
+    <div class="overlay">
+        <form action="#" class="search-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-9">
+                        <input type="text" class="form-control" id="search-input" placeholder="Search..."/>
+                    </div>
+                    <div class="col-md-2 col-3 text-right">
+                        <div class="search_toggle toggle-wrap d-inline-block">
+                            <i class="ti-close"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                  <div class="search-results">
+                    <ul id="results-container"></ul>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--search overlay end-->
+{% for post in site.posts limit: "1" %}
+<section class="banner" >
+	<div class="container">
+		<div class="banner-img">
+			<a href="{{post.url}}"><img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="banner-content text-center">
+					<div class="meta-cat">
+						<span class="text-capitalize letter-spacing-1 cat-name font-extra text-color">{{post.categories | limit: "1"}}</span>
+					</div>
+					<div class="post-title">
+						<h2><a href="{{post.url}}">{{post.title}}</a></h2>
+					</div>
+
+					<div class="post-meta footer-meta">
+						<ul class="list-inline">
+							<li class="post-read list-inline-item">{{post.date | date_to_long_string}}</li>
+						</ul>
+					</div>
+					<div class="post-content">
+						<p>{{post.excerpt | strip_html | truncatewords: "25"}}</p>
+						<a href="{{post.url}}" class="btn btn-grey mt-3"> read more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endfor %}
+
+
+
+
+<section class="section-padding pt-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+			{% if paginator.page == 1 %}
+			{% for post in site.posts %}	
+			 {% if forloop.index == 2 %}
+			<article class="post-list mb-5 pb-4 border-bottom">
+				{% if post.post_image %}
+				<a class="post-thumb mb-3 d-block" href="{{post.url}}">
+					<img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+				</a>
+				{% endif %}
+				<div class="meta-cat">
+					<span class="letter-spacing cat-name font-extra text-uppercase font-sm">{{post.categories | limit: "1"}}</span>
+				</div>
+				<h3 class="post-title mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+
+				<div class="post-meta footer-meta">
+					<ul class="list-inline">
+						<li class="post-like list-inline-item">
+							<span class="font-sm letter-spacing-1 text-uppercase"><i class="ti-time mr-2"></i> {{post.date | date_to_long_string}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="post-content">
+					<p>{{post.excerpt | strip_html | truncatewords: "25"}}</p>
+				</div>
+			</article>
+			{% endif %}
+            {% endfor %}
+            {% endif %}
+            {% for post in paginator.posts %}
+             {% if forloop.index >2 %}
+			<div class="mb-4 post-list border-bottom pb-4">
+				<div class="row no-gutters">
+					{% if post.post_image %}
+				    <div class="col-md-5">
+				    	<a class="post-thumb" href="{{post.url}}">
+					      <img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+					  	</a>
+				    </div>
+                    {% endif %}
+				    <div class="col-md-7">
+				        <div class="post-article mt-sm-3">
+				        	<div class="meta-cat">
+								<span class="letter-spacing cat-name font-extra text-uppercase font-sm">{{post.categories | limit: "1"}}</span>
+							</div>
+							<h3 class="post-title mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+
+							<div class="post-meta">
+								<ul class="list-inline">
+									<li class="post-like list-inline-item">
+										<span class="font-sm letter-spacing-1 text-uppercase"><i class="ti-time mr-2"></i>{{post.date | date_to_long_string}}</span>
+									</li>
+								</ul>
+							</div>
+							<div class="post-content">
+								<p>{{post.excerpt | strip_html | truncatewords: "30"}}</p>
+							</div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			{% endif%}
+            {% endfor %}
+            {% include pagination.html %}
+			</div>
+			<div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
+              {% include sidebar.html %}
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="footer-2 section-padding gray-bg pb-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="widget footer-widget mb-5 mb-lg-0">
+					<h5 class="widget-title text-uppercase letter-spacing-2 mb-4">About me</h5>
+					<img src="/assets/images/about.jpg" alt="" class="img-fluid">
+					<p class="mt-4">It is the best selling Blog & Magazine html Theme of this year on Themefisher.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="widget footer-widget mb-5 mb-lg-0">
+					<h5 class="widget-title text-uppercase letter-spacing-2 mb-4">Trending</h5>
+                    {% for post in site.posts limit: "2" %}
+			        <div class="media pb-3 sidebar-post-item">
+			        	{% if post.post_image %}
+			              <a href="{{post.url}}"><img class="mr-4" src="{{post.post_image}}" alt="{{post.title}}/"></a>
+			            {% endif %}
+			            <div class="media-body">
+			            	<span class="text-uppercase font-sm font-extra letter-spacing">{{post.categories | limit:"1"}}</span>
+			                <h4 class="mt-1"><a href="{{post.url}}">{{post.title}}</a></h4>
+			            </div>
+			        </div>
+                    {% endfor %}
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="widget footer-widget">
+					<h5 class="widget-title text-uppercase letter-spacing-2 mb-4">Gallery</h5>
+
+					<div class="row no-gutters">
+						{% for post in site.posts limit: "6" %}
+						{% if post.post_image %}
+		                <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+		                    <a href="{{post.post_image}}" data-fancybox="gallery"><img class="img-fluid" src="{{post.post_image}}" alt="{{post.title}}"/></a>
+		                </div>
+		                {% endif %}
+                        {% endfor %}
+		            </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-btm mt-5 pt-4 border-top">
+			<div class="row">
+				<div class="col-lg-12">
+                  {% include footer_menu_one.html %}
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="copyright text-center ">
+					  {{site.copyright_text}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>	
+<script src="{{relative_url}}/assets/plugins/fancybox/jquery.fancybox.min.js"/>

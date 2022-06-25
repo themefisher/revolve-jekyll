@@ -1,0 +1,107 @@
+---
+layout: default
+pagination:
+  enabled: true
+---
+
+<header class="header-top bg-dark py-4">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg navigation menu-white">
+            <a class="navbar-brand" href="{{site.url}}">
+              <img src="{{site.white_logo}}" alt="{{site.title}}" class="img-fluid"/>
+            </a>
+
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="ti-menu  text-white"></span>
+            </button>
+
+              <div class="collapse navbar-collapse" id="navbar-collapse">
+               {% include navigation.html menu_class="ml-auto" %}
+              <div class="text-lg-right search ml-4">
+                <div class="search_toggle"><i class="ti-search text-white"></i></div>
+              </div>
+         </div>
+      </nav>
+  </div>
+</header>
+<!--search overlay start-->
+<div class="search-wrap">
+    <div class="overlay">
+        <form action="#" class="search-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-9">
+                        <input type="text" class="form-control" id="search-input" placeholder="Search..."/>
+                    </div>
+                    <div class="col-md-2 col-3 text-right">
+                        <div class="search_toggle toggle-wrap d-inline-block">
+                            <i class="ti-close"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                  <div class="search-results">
+                    <ul id="results-container"></ul>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--search overlay end-->
+<section class="section-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="row">
+                  {% for post in paginator.posts %}
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<article class="post-grid mb-5 ">
+							{% if post.post_image %}
+							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
+								<img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+							</a>
+                            {% endif %}
+							<div class="post-content-grid">
+								<div class="label-date">
+									<span class="day">{{post.date |  date: "%d"}}</span>
+									<span class="month text-uppercase">{{post.date |  date: "%b"}}</span>
+								</div>
+								<span class="cat-name text-color font-extra font-sm text-uppercase letter-spacing">{{post.categories | limit:"1"}}</span>
+								<h3 class="post-title mt-1"><a href="{{post.url}}">{{post.title}}</a></h3>
+								<p>{{post.excerpt | strip_html | truncatewords: "25"}}</p>
+							</div>
+						</article>
+					</div>
+                   {% endfor %}
+               </div>
+			</div>
+
+			<div class="m-auto">
+			<div class="pagination">
+			{% if paginator.total_pages > 1 %}
+			<ul class="list-inline ">
+			  {% if paginator.previous_page %}
+			  <li class="list-inline-item">
+			    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="ti-arrow-left"></i> Newest</a>
+			  </li>
+			  {% endif %}
+			  {% if paginator.next_page %}
+			  <li class="list-inline-item">
+			    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older <i class="ti-arrow-right"></i></a>
+			  </li>
+			  {% endif %}
+			</ul>
+			{% endif %}
+			</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include footer_two.html %}

@@ -1,0 +1,18 @@
+<div class="pagination mt-5 pt-4">
+{% if paginator.total_pages > 1 %}
+<ul class="list-inline ">
+  {% if paginator.previous_page %}
+  <li class="list-inline-item">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"><i class="ti-arrow-left"></i> Newest</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="list-inline-item">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older <i class="ti-arrow-right"></i></a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
+</div>
+
+        

@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+{% include header_two.html %}
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center">
+                    <h2 class="lg-title text-capitalize">{{page.title}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                  {% for post in page.posts %}
+                    <div class="col-lg-6 col-md-6">
+                        <article class="post-grid mb-5">
+                            {% if post.post_image %}
+                            <div class="post-thumb mb-4">
+                                <a href="{{post.url}}"><img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
+                            </div>
+                            {% endif %}
+                            <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1">{{post.categories | limit: "1"}}</span>
+                            <h3 class="post-title mt-1"><a href="{{post.url}}">{{post.title}}</a></h3>
+                            <span class=" text-muted  text-capitalize">{{post.date | date_to_long_string}}</span>
+                        </article>
+                    </div>
+                   {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+              {% include sidebar.html %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include footer_two.html %}

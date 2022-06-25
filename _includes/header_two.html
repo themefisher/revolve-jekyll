@@ -1,0 +1,58 @@
+<div class="header-logo py-5 d-none d-lg-block">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <a class="navbar-brand" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid w-100"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header-top bg-grey justify-content-center">
+    <nav class="navbar navbar-expand-lg navigation">
+        <div class="container">
+            <a class="navbar-brand d-lg-none" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid" /></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ti-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                {% include navigation.html %}
+            </div>
+
+            <div class="text-right search d-none d-lg-block">
+                <div class="search_toggle"><i class="ti-search"></i></div>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<!--search overlay start-->
+<div class="search-wrap">
+    <div class="overlay">
+        <form action="#" class="search-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-9">
+                        <input type="text" class="form-control" id="search-input" placeholder="Search..."/>
+                    </div>
+                    <div class="col-md-2 col-3 text-right">
+                        <div class="search_toggle toggle-wrap d-inline-block">
+                            <i class="ti-close"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto">
+                  <div class="search-results">
+                    <ul id="results-container"></ul>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--search overlay end-->

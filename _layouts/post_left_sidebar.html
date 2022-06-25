@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+{% include header_two.html %}
+
+<section class="single-block-wrapper section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+              {% include sidebar.html %}
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <div class="single-post">
+                    <div class="post-header mb-5 text-center">
+                        <div class="meta-cat">
+                            {{ page | tags }}
+                        </div>
+                        <h2 class="post-title mt-2">{{page.title}}</h2>
+
+                        <div class="post-meta">
+                          {% if page.author %}
+                            <span class="text-uppercase font-sm letter-spacing-1 mr-3">by {{page.author}}</span>
+                          {% endif %}
+                            <span class="text-uppercase font-sm letter-spacing-1">{{page.date | date_to_long_string}}</span>
+                          
+                        </div>
+                        {% if page.post_image %}
+                        <div class="post-featured-image mt-5">
+                            <img src="{{page.post_image}}" class="img-fluid w-100" alt="{{page.title}}">
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="post-body">
+                        <div class="entry-content">
+                            {{content}}
+                        </div>
+
+                        <div class="post-tags py-4">
+                            {{ page | tags | prepend:"#" }}
+                        </div>
+
+                        <div class="tags-share-box center-box d-flex text-center justify-content-between border-top border-bottom py-3">
+                            <span class="single-comment-o" data-disqus-identifier={{page.id}}><i class="fa fa-comment-o"></i> 0 comment</span>
+                            <div class="list-posts-share">
+                             {% include social_share.html %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% assign author_info = site.author_info %}
+                  {% for data in author_info %} 
+                    <div class="post-author d-flex my-5">
+                      {% if data['image'] %}
+                      <div class="author-img">
+                          <img alt="{{data['name']}}" src="{{data['image']}}" class="avatar avatar-100 photo" width="100" height="100">
+                      </div>
+                      {% endif %}
+                      <div class="author-content pl-4">
+                        <h4 class="mb-3">{{data['name']}}</h4>
+                        <p>{{data['bio']}}</p>
+                        {% if data['facebook_url'] %}
+                         <a target="_blank" class="author-social" href="{{data['facebook_url']}}"><i class="ti-facebook"></i></a>
+                        {% endif %}
+                        {% if data['twitter_url'] %}
+                         <a target="_blank" class="author-social" href="{{data['twitter_url']}}"><i class="ti-twitter"></i></a>
+                        {% endif %}
+                        {% if data['instagram_url'] %}
+                        <a target="_blank" class="author-social" href="{{data['instagram_url']}}"><i class="ti-instagram"></i></a>
+                        {% endif %}
+                        {% if data['pinterest_url'] %}
+                        <a target="_blank" class="author-social" href="{{data['pinterest_url']}}"><i class="ti-pinterest"></i></a>
+                        {% endif %}
+                        {% if data['youtube_url'] %}
+                        <a target="_blank" class="author-social" href="{{data['youtube_url']}}"><i class="ti-youtube"></i></a>
+                        {% endif %}
+                    </div>
+                    
+                </div>
+                {% endfor %}
+                <nav class="post-pagination clearfix border-top border-bottom py-4">
+                    {% if page.next.url %}
+                    <div class="prev-post">
+                        <a href="{{page.next.url}}">
+                            <span class="text-uppercase font-sm letter-spacing">Next</span>
+                            <h4 class="mt-3">{{page.next.title}}</h4>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if page.previous.url %}
+                    <div class="next-post">
+                        <a href="{{page.previous.url}}">
+                            <span class="text-uppercase font-sm letter-spacing">Previous</span>
+                            <h4 class="mt-3">{{page.previous.title}}</h4>
+                        </a>
+                    </div>
+                    {% endif %}
+                </nav>
+                {% include related_posts.html %}
+                <div class="comment-area my-5">
+                <div id="disqus_thread"></div>
+                 {% include disqus_comments.html %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% include footer_two.html %}
