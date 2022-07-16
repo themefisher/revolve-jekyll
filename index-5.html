@@ -62,7 +62,7 @@ pagination:
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<article class="post-grid mb-5 ">
 							{% if post.post_image %}
-							<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+							<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}.html">
 								<img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/>
 							</a>
                             {% endif %}
@@ -72,7 +72,7 @@ pagination:
 									<span class="month text-uppercase">{{post.date |  date: "%b"}}</span>
 								</div>
 								<span class="cat-name text-color font-extra font-sm text-uppercase letter-spacing">{{post.categories | limit:"1"}}</span>
-								<h3 class="post-title mt-1"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
+								<h3 class="post-title mt-1"><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h3>
 								<p>{{post.excerpt | strip_html | truncatewords: "25"}}</p>
 							</div>
 						</article>

@@ -23,21 +23,21 @@
             <h4 class="text-center widget-title">Trending Posts</h4> {% assign featured_posts = site.posts | where: "featured","true" %} {% for post in featured_posts | limit: "3" %} {% if forloop.index == 1 %}
             <div class="sidebar-post-item-big">
                 {% if post.post_image %}
-                <a href="{{post.url | relative_url}}"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid" /></a>
+                <a href="{{post.url | relative_url}}.html"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid" /></a>
                 {% endif %}
                 <div class="mt-3 media-body">
                     <span class="text-muted letter-spacing text-uppercase font-sm">{{post.date | date_to_long_string }}</span>
-                    <h4><a href="{{post.url | relative_url}}">{{post.title}}</a></h4>
+                    <h4><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h4>
                 </div>
             </div>
             {% else %}
             <div class="media border-bottom py-3 sidebar-post-item">
                 {% if post.post_image %}
-                <a href="{{post.url | relative_url}}"><img class="mr-4" src="{{post.post_image | relative_url}}" alt="{{post.title}}" /></a>
+                <a href="{{post.url | relative_url}}.html"><img class="mr-4" src="{{post.post_image | relative_url}}" alt="{{post.title}}" /></a>
                 {% endif %}
                 <div class="media-body">
                     <span class="text-muted letter-spacing text-uppercase font-sm">{{post.date | date_to_long_string }}</span>
-                    <h4><a href="{{post.url | relative_url}}">{{post.title}}</a></h4>
+                    <h4><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h4>
                 </div>
             </div>
             {% endif %} {% endfor %}

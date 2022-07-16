@@ -77,7 +77,7 @@ pagination:
 <section class="banner" >
 	<div class="container">
 		<div class="banner-img">
-			<a href="{{post.url | relative_url}}"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
+			<a href="{{post.url | relative_url}}.html"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
@@ -86,7 +86,7 @@ pagination:
 						<span class="text-capitalize letter-spacing-1 cat-name font-extra text-color">{{post.categories | limit: "1"}}</span>
 					</div>
 					<div class="post-title">
-						<h2><a href="{{post.url | relative_url}}">{{post.title}}</a></h2>
+						<h2><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h2>
 					</div>
 
 					<div class="post-meta footer-meta">
@@ -96,7 +96,7 @@ pagination:
 					</div>
 					<div class="post-content">
 						<p>{{post.excerpt | strip_html | truncatewords: "25"}}</p>
-						<a href="{{post.url | relative_url}}" class="btn btn-grey mt-3"> read more</a>
+						<a href="{{post.url | relative_url}}.html" class="btn btn-grey mt-3"> read more</a>
 					</div>
 				</div>
 			</div>
@@ -117,14 +117,14 @@ pagination:
 			 {% if forloop.index == 2 %}
 			<article class="post-list mb-5 pb-4 border-bottom">
 				{% if post.post_image %}
-				<a class="post-thumb mb-3 d-block" href="{{post.url | relative_url}}">
+				<a class="post-thumb mb-3 d-block" href="{{post.url | relative_url}}.html">
 					<img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/>
 				</a>
 				{% endif %}
 				<div class="meta-cat">
 					<span class="letter-spacing cat-name font-extra text-uppercase font-sm">{{post.categories | limit: "1"}}</span>
 				</div>
-				<h3 class="post-title mt-2"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
+				<h3 class="post-title mt-2"><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h3>
 
 				<div class="post-meta footer-meta">
 					<ul class="list-inline">
@@ -146,7 +146,7 @@ pagination:
 				<div class="row no-gutters">
 					{% if post.post_image %}
 				    <div class="col-md-5">
-				    	<a class="post-thumb" href="{{post.url | relative_url}}">
+				    	<a class="post-thumb" href="{{post.url | relative_url}}.html">
 					      <img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/>
 					  	</a>
 				    </div>
@@ -156,7 +156,7 @@ pagination:
 				        	<div class="meta-cat">
 								<span class="letter-spacing cat-name font-extra text-uppercase font-sm">{{post.categories | limit: "1"}}</span>
 							</div>
-							<h3 class="post-title mt-2"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
+							<h3 class="post-title mt-2"><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h3>
 
 							<div class="post-meta">
 								<ul class="list-inline">
@@ -199,11 +199,11 @@ pagination:
                     {% for post in site.posts limit: "2" %}
 			        <div class="media pb-3 sidebar-post-item">
 			        	{% if post.post_image %}
-			              <a href="{{post.url | relative_url}}"><img class="mr-4" src="{{post.post_image | relative_url}}" alt="{{post.title}}/"></a>
+			              <a href="{{post.url | relative_url}}.html"><img class="mr-4" src="{{post.post_image | relative_url}}" alt="{{post.title}}/"></a>
 			            {% endif %}
 			            <div class="media-body">
 			            	<span class="text-uppercase font-sm font-extra letter-spacing">{{post.categories | limit:"1"}}</span>
-			                <h4 class="mt-1"><a href="{{post.url | relative_url}}">{{post.title}}</a></h4>
+			                <h4 class="mt-1"><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h4>
 			            </div>
 			        </div>
                     {% endfor %}

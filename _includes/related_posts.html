@@ -4,11 +4,11 @@
         {% for post in site.posts | limit: "3" %}
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="post-block-wrapper mb-4 mb-lg-0">
-                <a href="{{post.url | relative_url}}">
+                <a href="{{post.url | relative_url}}.html">
                     <img class="img-fluid" src="{{post.post_image | relative_url}}" alt="{{post.title}}" />
                 </a>
                 <div class="post-content mt-3">
-                    <h5><a href="{{post.url | relative_url}}">{{post.title}}</a></h5>
+                    <h5><a href="{{post.url | relative_url}}.html">{{post.title}}</a></h5>
                 </div>
             </div>
         </div>
