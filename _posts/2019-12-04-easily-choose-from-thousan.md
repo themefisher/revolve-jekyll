@@ -4,7 +4,7 @@ title: "Easily choose from thousan"
 date: 2019-12-04 12:37:13 +0600
 categories: [Technology]
 author: ecuelass_chapman
-post_image: "/assets/images/slider/slider4.jpg"
+post_image: "/assets/images/slider/slider3.jpg"
 author: "Themefisher"
 featured: true
 ---

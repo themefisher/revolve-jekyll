@@ -27,7 +27,7 @@ layout: default
                         </div>
                         {% if page.post_image %}
                         <div class="post-featured-image mt-5">
-                            <img src="{{page.post_image}}" class="img-fluid w-100" alt="{{page.title}}">
+                            <img src="{{page.post_image | relative_url}}" class="img-fluid w-100" alt="{{page.title}}">
                         </div>
                         {% endif %}
                     </div>
@@ -81,7 +81,7 @@ layout: default
                 <nav class="post-pagination clearfix border-top border-bottom py-4">
                     {% if page.next.url %}
                     <div class="prev-post">
-                        <a href="{{page.next.url}}">
+                        <a href="{{page.next.url | relative_url}}">
                             <span class="text-uppercase font-sm letter-spacing">Next</span>
                             <h4 class="mt-3">{{page.next.title}}</h4>
                         </a>
@@ -89,7 +89,7 @@ layout: default
                     {% endif %}
                     {% if page.previous.url %}
                     <div class="next-post">
-                        <a href="{{page.previous.url}}">
+                        <a href="{{page.previous.url | relative_url}}">
                             <span class="text-uppercase font-sm letter-spacing">Previous</span>
                             <h4 class="mt-3">{{page.previous.title}}</h4>
                         </a>

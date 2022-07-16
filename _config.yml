@@ -2,8 +2,8 @@ title: "Revolve -  Multipurpose Business & Corporate Jekyll Template"
 email: "rubel2585@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
   Revolve - Multipurpose Business & Corporate Jekyll Template Jekyll Theme For Mobile Apps Download Landing Page And Blogging.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://revolvejk.netlify.com"
+baseurl: "/revolve-jekyll" # the subpath of your site, e.g. /blog
+url: "https://demo.themefisher.com"
 permalink: "/:title"
 facebook_url: "https://www.facebook.com/rubel.hossain.31105"
 twitter_url: "https://twitter.com/tryghost"

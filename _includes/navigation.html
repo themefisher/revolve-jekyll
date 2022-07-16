@@ -13,11 +13,11 @@
 {% endif %}
  
  <li class="nav-item {% if link.submenu %} dropdown {% endif %}">
-     <a class="nav-link" href="{{link.url}}">{{link.text}}{% if link.submenu %}<i class="icofont-simple-down"></i>{% endif %}</a>
+     <a class="nav-link" href="{{link.url | relative_url }}">{{link.text}}{% if link.submenu %}<i class="icofont-simple-down"></i>{% endif %}</a>
     {% if link.submenu %}
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         {% for sublink in link.submenu %}
-        <a class="dropdown-item" href="{{sublink.url}}">{{sublink.text}}</a>
+        <a class="dropdown-item" href="{{sublink.url | relative_url }}">{{sublink.text}}</a>
         {% endfor %}
     </div>
     {% endif %}

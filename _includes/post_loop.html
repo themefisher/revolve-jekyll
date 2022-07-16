@@ -1,11 +1,11 @@
 {% for post in paginator.posts %}
 <div class="col-lg-3 col-md-6">
     <article class="post-grid mb-5">
-        <a class="post-thumb mb-4 d-block" href="{{post.url}}">
-            <img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+        <a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+            <img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/>
         </a>
         <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1">{{post.categories}}</span>
-        <h3 class="post-title mt-1"><a href="{{post.url}}">{{post.title}}</a></h3>
+        <h3 class="post-title mt-1"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
         <span class="text-muted letter-spacing text-uppercase font-sm">{{post.date | date_to_long_string}}</span>
     </article>
 </div>

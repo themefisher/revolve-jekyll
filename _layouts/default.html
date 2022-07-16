@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>{% if page.title %} {{page.title}} {% else %} {{site.title}} {% endif %}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      {% if page.title %} {{page.title}} {% else %} {{site.title}} {% endif %}
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    
+    <link
+      rel="shortcut icon"
+      href="/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+
     <!-- THEME CSS
     ================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/bootstrap/css/bootstrap.min.css' | relative_url }}"
+    />
     <!-- Themify -->
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/themify/css/themify-icons.css">
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/slick-carousel/slick-theme.css">
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/slick-carousel/slick.css">
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/themify/css/themify-icons.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/slick-carousel/slick-theme.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/slick-carousel/slick.css' | relative_url }}"
+    />
     <!-- Slick Carousel -->
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/owl-carousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="{{relative_url}}/assets/plugins/magnific-popup/magnific-popup.css">
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/owl-carousel/owl.carousel.min.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/owl-carousel/owl.theme.default.min.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{'/assets/plugins/magnific-popup/magnific-popup.css' | relative_url }}"
+    />
     <!-- manin stylesheet -->
-    <link rel="stylesheet" href="{{relative_url}}/assets/css/style.css">
-    <script src="{{relative_url}}/assets/plugins/jquery/jquery.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="{{'/assets/css/style.css' | relative_url }}" />
+    <script src="{{'/assets/plugins/jquery/jquery.js' | relative_url }}"></script>
+  </head>
+  <body>
+    {{content}}
 
-{{content}}
-
-<!-- THEME JAVASCRIPT FILES
+    <!-- THEME JAVASCRIPT FILES
 ================================================== -->
-<!-- initialize jQuery Library -->
+    <!-- initialize jQuery Library -->
 
-<!-- Bootstrap jQuery -->
+    <!-- Bootstrap jQuery -->
 
-<script src="{{relative_url}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="{{relative_url}}/assets/plugins/bootstrap/js/popper.min.js"></script>
-<!-- Owl caeousel -->
-<script src="{{relative_url}}/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-<script src="{{relative_url}}/assets/plugins/slick-carousel/slick.min.js"></script>
-<script src="{{relative_url}}/assets/plugins/magnific-popup/magnific-popup.js"></script>
-<!-- Instagram Feed Js -->
-<script src="{{relative_url}}/assets/plugins/instafeed-js/instafeed.min.js"></script>
-<!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-<script src="{{relative_url}}/assets/plugins/google-map/gmap.js"></script>
-<script src="{{relative_url}}/assets/js/simple-jekyll-search.min.js"></script>
-<script id="dsq-count-scr" src="//https-revolvejk-netlify-com.disqus.com/count.js" async></script>
-<!-- main js -->
-<script src="{{relative_url}}/assets/js/custom.js"></script>
-</body>
+    <script src="{{'/assets/plugins/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/plugins/bootstrap/js/popper.min.js' | relative_url }}"></script>
+    <!-- Owl caeousel -->
+    <script src="{{'/assets/plugins/owl-carousel/owl.carousel.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/plugins/slick-carousel/slick.min.js' | relative_url }}"></script>
+    <script src="{{'/assets/plugins/magnific-popup/magnific-popup.js' | relative_url }}"></script>
+    <!-- Instagram Feed Js -->
+    <script src="{{'/assets/plugins/instafeed-js/instafeed.min.js' | relative_url }}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="{{'/assets/plugins/google-map/gmap.js' | relative_url }}"></script>
+    <script src="{{'/assets/js/simple-jekyll-search.min.js' | relative_url }}"></script>
+    <script
+      id="dsq-count-scr"
+      src="https://https-revolvejk-netlify-com.disqus.com/count.js"
+      async
+    ></script>
+    <!-- main js -->
+    <script src="{{'/assets/js/custom.js' | relative_url }}"></script>
+  </body>
 </html>

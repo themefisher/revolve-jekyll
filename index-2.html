@@ -13,7 +13,7 @@ pagination:
 <header class="header-top bg-dark justify-content-between navigation-dark">
   <nav class="navbar navbar-expand-lg navigation ">
       <div class="container">
-          <a class="navbar-brand d-lg-none" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid"/></a>
+          <a class="navbar-brand d-lg-none" href="{{ site.baseURL | relative_url }}"><img src="{{site.site_logo | relative_url}}" alt="{{site.title}}" class="img-fluid"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="ti-menu"></span>
           </button>
@@ -36,7 +36,7 @@ pagination:
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-        <a class="navbar-brand d-none d-lg-block" href="{{site.url}}"><img src="{{site.site_logo}}" alt="{{site.title}}" class="img-fluid"></a>
+        <a class="navbar-brand d-none d-lg-block" href="{{ site.baseURL | relative_url }}"><img src="{{site.site_logo | relative_url}}" alt="{{site.title}}" class="img-fluid"></a>
       </div>
     </div>
   </div>
@@ -51,12 +51,12 @@ pagination:
 				  {% if forloop.index == 1 %}
 				  <article class="post-grid mb-5">
 				  	{% if post.post_image %}
-					<a class="post-thumb mb-4 d-block" href="{{post.url}}">
-						<img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+					<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+						<img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/>
 					</a>
 					{% endif %}
 					<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1" }}</span>
-					<h2 class="mb-1 mt-2 post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+					<h2 class="mb-1 mt-2 post-title"><a href="{{post.url | relative_url}}">{{post.title}}</a></h2>
 					<div class="post-content mt-4">
 						<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
 					</div>
@@ -70,12 +70,12 @@ pagination:
 					<div class="col-lg-6">
 						<article class="post-grid mb-5">
 							{% if post.post_image %}
-							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
-								<img src="{{post.post_image}}" alt="" class="img-fluid"/>
+							<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+								<img src="{{post.post_image | relative_url}}" alt="" class="img-fluid"/>
 							</a>
 							{% endif %}
 							<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1"}}</span>
-							<h3 class="post-title mb-1 mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+							<h3 class="post-title mb-1 mt-2"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
 
 							<div class="post-content mt-4">
 								<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
@@ -89,12 +89,12 @@ pagination:
 				  {% if forloop.index == 6 %}
 				  <article class="post-grid mb-5">
 				  	{% if post.post_image %}
-					<a class="post-thumb mb-4 d-block" href="{{post.url}}">
-						<img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/>
+					<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+						<img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/>
 					</a>
 					{% endif %}
 					<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1" }}</span>
-					<h2 class="mb-1 mt-2 post-title"><a href="{{post.url}}">{{post.title}}</a></h2>
+					<h2 class="mb-1 mt-2 post-title"><a href="{{post.url | relative_url}}">{{post.title}}</a></h2>
 					<div class="post-content mt-4">
 						<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
 					</div>
@@ -107,12 +107,12 @@ pagination:
 					<div class="col-lg-6">
 						<article class="post-grid mb-5">
 							{% if post.post_image %}
-							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
-								<img src="{{post.post_image}}" alt="" class="img-fluid"/>
+							<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+								<img src="{{post.post_image | relative_url}}" alt="" class="img-fluid"/>
 							</a>
 							{% endif %}
 							<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1"}}</span>
-							<h3 class="post-title mb-1 mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+							<h3 class="post-title mb-1 mt-2"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
 
 							<div class="post-content mt-4">
 								<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>
@@ -128,12 +128,12 @@ pagination:
 					<div class="col-lg-6">
 						<article class="post-grid mb-5">
 							{% if post.post_image %}
-							<a class="post-thumb mb-4 d-block" href="{{post.url}}">
-								<img src="{{post.post_image}}" alt="" class="img-fluid"/>
+							<a class="post-thumb mb-4 d-block" href="{{post.url | relative_url}}">
+								<img src="{{post.post_image | relative_url}}" alt="" class="img-fluid"/>
 							</a>
 							{% endif %}
 							<span class="font-sm text-color letter-spacing text-uppercase post-meta font-extra">{{post.categories | limit: "1"}}</span>
-							<h3 class="post-title mb-1 mt-2"><a href="{{post.url}}">{{post.title}}</a></h3>
+							<h3 class="post-title mb-1 mt-2"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
 
 							<div class="post-content mt-4">
 								<p>{{post.excerpt | strip_html | truncatewords: "30" }}</p>

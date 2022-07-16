@@ -25,11 +25,11 @@ layout: default
                         <article class="post-grid mb-5">
                             {% if post.post_image %}
                             <div class="post-thumb mb-4">
-                                <a href="{{post.url}}"><img src="{{post.post_image}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
+                                <a href="{{post.url | relative_url}}"><img src="{{post.post_image | relative_url}}" alt="{{post.title}}" class="img-fluid w-100"/></a>
                             </div>
                             {% endif %}
                             <span class="cat-name text-color font-extra text-sm text-uppercase letter-spacing-1">{{post.categories | limit: "1"}}</span>
-                            <h3 class="post-title mt-1"><a href="{{post.url}}">{{post.title}}</a></h3>
+                            <h3 class="post-title mt-1"><a href="{{post.url | relative_url}}">{{post.title}}</a></h3>
                             <span class=" text-muted  text-capitalize">{{post.date | date_to_long_string}}</span>
                         </article>
                     </div>

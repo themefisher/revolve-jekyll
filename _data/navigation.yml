@@ -2,29 +2,18 @@
 
 - text: Home
   url: /
-  submenu:
-  - text: Home 2
-    url: /index-2
-  - text: Home 3
-    url: /index-3
-  - text: Home 4
-    url: /index-4
-  - text: Home 5
-    url: /index-5
-  - text: Home 6
-    url: /index-6
 - text: Blog Posts
   url: "#"
   submenu:
-  - text: Standard Fullwidth
-    url: /the-best-soft-tropical-getaway
-  - text: Standard Left Sidebar
-    url: /free-wordpress-and-html-themes
-  - text: Standard Right Sidebar
-    url: /ingredient-cilantro-vinaigrette
+    - text: Standard Fullwidth
+      url: /the-best-soft-tropical-getaway.html
+    - text: Standard Left Sidebar
+      url: /free-wordpress-and-html-themes.html
+    - text: Standard Right Sidebar
+      url: /ingredient-cilantro-vinaigrette.html
 - text: About
-  url: /about
+  url: /about.html
 - text: Category
   url: /category/design
 - text: Contact
-  url: /contact
+  url: /contact.html
