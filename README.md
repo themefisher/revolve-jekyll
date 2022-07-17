@@ -2,9 +2,9 @@
 
 Revolve Jekyll Blog Template ported from [Revolve HTML Template](https://themefisher.com/products/revolve/)
 
-![revolve](https://demo.gethugothemes.com/thumbnails/revolve.png)
+![revolve](https://demo.themefisher.com/thumbnails/revolve-jekyll.png)
 
-[Live Preview](http://demo.gethugothemes.com/revolve/).
+[Live Preview](http://demo.themefisher.com/revolve-jekyll/).
 
 ## Setup
 
