@@ -1,8 +1,10 @@
-# Revolve Jekyll
+<h1 align=center>Revolve Jekyll </h1>
 
-Revolve Jekyll Blog Template ported from [Revolve HTML Template](https://themefisher.com/products/revolve/)
+<p align=center>Revolve Jekyll Blog Template ported from [Revolve HTML Template](https://themefisher.com/products/revolve/)</p>
 
-![revolve](https://demo.themefisher.com/thumbnails/revolve-jekyll.png)
+<h2 align="center"> <a target="_blank" href="https://demo.themefisher.com/thumbnails/revolve-jekyll/" rel="nofollow">Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.themefisher.com%2Frevolve-jekyll%2F&form_factor=desktop">Page Speed (89%)</a> </h2>
+
+
 
 [Live Preview](http://demo.themefisher.com/revolve-jekyll/).
 
